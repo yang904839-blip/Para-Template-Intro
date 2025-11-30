@@ -465,7 +465,8 @@ const Pricing = () => {
         "Notion 高级模板 (含自动化)",
         "实战案例库 (4大职业场景)",
         "社群答疑支持",
-        "终身免费更新"
+        "终身免费更新",
+        "我开发的所有软件8折优惠"
       ],
       comingSoon: true
     },
@@ -478,7 +479,8 @@ const Pricing = () => {
         "1对1 定制化咨询 (60分钟)",
         "专属 VIP 答疑渠道",
         "赠送 LifeOS 完整系统",
-        "优先体验新功能"
+        "优先体验新功能",
+        "我开发的所有软件6折优惠"
       ],
       comingSoon: true
     }
@@ -527,10 +529,10 @@ const Pricing = () => {
               <button
                 disabled={tier.comingSoon}
                 className={`w-full py-4 rounded-xl font-bold transition-all ${tier.comingSoon
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : tier.recommended
-                      ? 'bg-black text-white hover:bg-gray-800'
-                      : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : tier.recommended
+                    ? 'bg-black text-white hover:bg-gray-800'
+                    : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
                   }`}>
                 {tier.comingSoon ? '敬请期待' : '立即购买'}
               </button>
