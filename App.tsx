@@ -27,6 +27,7 @@ interface PricingTier {
   description: string;
   features: string[];
   recommended?: boolean;
+  comingSoon?: boolean;
 }
 
 interface Testimonial {
@@ -465,7 +466,8 @@ const Pricing = () => {
         "实战案例库 (4大职业场景)",
         "社群答疑支持",
         "终身免费更新"
-      ]
+      ],
+      comingSoon: true
     },
     {
       name: "旗舰版",
@@ -477,7 +479,8 @@ const Pricing = () => {
         "专属 VIP 答疑渠道",
         "赠送 LifeOS 完整系统",
         "优先体验新功能"
-      ]
+      ],
+      comingSoon: true
     }
   ];
 
@@ -503,6 +506,11 @@ const Pricing = () => {
                   Most Popular
                 </div>
               )}
+              {tier.comingSoon && (
+                <div className="absolute top-4 right-4 bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                  Coming Soon
+                </div>
+              )}
               <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
               <p className="text-gray-500 text-sm mb-6 h-10">{tier.description}</p>
               <div className="text-4xl font-bold mb-8">{tier.price}</div>
@@ -516,11 +524,15 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-xl font-bold transition-all ${tier.recommended
-                ? 'bg-black text-white hover:bg-gray-800'
-                : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
-                }`}>
-                立即购买
+              <button
+                disabled={tier.comingSoon}
+                className={`w-full py-4 rounded-xl font-bold transition-all ${tier.comingSoon
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : tier.recommended
+                      ? 'bg-black text-white hover:bg-gray-800'
+                      : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
+                  }`}>
+                {tier.comingSoon ? '敬请期待' : '立即购买'}
               </button>
             </div>
           ))}
