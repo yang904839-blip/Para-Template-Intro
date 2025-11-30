@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  FolderKanban, 
-  Target, 
-  Library, 
-  Archive, 
-  CheckCircle2, 
-  ArrowRight, 
-  Menu, 
-  X, 
-  Zap, 
-  Layout, 
-  Users, 
+import {
+  FolderKanban,
+  Target,
+  Library,
+  Archive,
+  CheckCircle2,
+  ArrowRight,
+  Menu,
+  X,
+  Zap,
+  Layout,
+  Users,
   RefreshCw,
   Search,
   Database,
@@ -63,10 +63,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-200 py-3' : 'bg-transparent py-5'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-gray-200 py-3' : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -83,7 +82,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <button 
+          <button
             onClick={() => scrollToSection('pricing')}
             className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all transform hover:scale-105"
           >
@@ -102,7 +101,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -112,7 +111,7 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('concept')} className="text-left py-2">核心概念</button>
               <button onClick={() => scrollToSection('benefits')} className="text-left py-2">优势</button>
               <button onClick={() => scrollToSection('pricing')} className="text-left py-2">定价</button>
-              <button 
+              <button
                 onClick={() => scrollToSection('pricing')}
                 className="bg-black text-white px-5 py-3 rounded-xl text-center mt-2"
               >
@@ -130,7 +129,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
-      
+
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -149,32 +148,32 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
             告别文件堆积与目标拖延。PARA 系统——一套让 1000+ 用户找回执行力的终极管理方案。
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button 
+            <button
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto px-8 py-4 bg-black text-white rounded-full font-medium text-lg hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
             >
               获取 PARA 系统 <ArrowRight size={20} />
             </button>
-            <button 
+            <button
               onClick={() => document.getElementById('concept')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-full font-medium text-lg hover:bg-gray-50 transition-all flex items-center justify-center"
             >
-              深入了解
+              深入了解吗？
             </button>
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mt-20 relative"
         >
-          <img 
-            src="https://picsum.photos/1200/600?grayscale&blur=2" 
-            alt="Dashboard Preview" 
+          <img
+            src="https://picsum.photos/1200/600?grayscale&blur=2"
+            alt="Dashboard Preview"
             className="rounded-2xl shadow-2xl border border-gray-200 opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent h-1/3 bottom-0"></div>
@@ -228,7 +227,7 @@ const BentoGrid = () => {
     <section id="concept" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">不仅仅是整理，<br/>是关于<span className="text-gray-400">流动的逻辑</span>。</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">不仅仅是整理，<br />是关于<span className="text-gray-400">流动的逻辑</span>。</h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Tiago Forte 提出的 PARA 方法论，用四个简单的维度，重构你的信息架构。
           </p>
@@ -236,7 +235,7 @@ const BentoGrid = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +278,7 @@ const Comparison = () => {
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
               这是我两年实战打磨的系统。它不只是一个文件夹结构，而是一套让你从「想做」变成「在做」，从「焦虑」变成「掌控」的行动引擎。
             </p>
-            
+
             <div className="space-y-8">
               <div className="flex items-start">
                 <div className="p-3 bg-red-500/10 rounded-xl mr-6">
@@ -349,7 +348,7 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((f, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -420,13 +419,12 @@ const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {tiers.map((tier, idx) => (
-            <div 
+            <div
               key={idx}
-              className={`relative p-8 rounded-3xl border flex flex-col ${
-                tier.recommended 
-                  ? 'border-blue-500 shadow-2xl scale-105 z-10 bg-white' 
+              className={`relative p-8 rounded-3xl border flex flex-col ${tier.recommended
+                  ? 'border-blue-500 shadow-2xl scale-105 z-10 bg-white'
                   : 'border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 transition-all'
-              }`}
+                }`}
             >
               {tier.recommended && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
@@ -436,7 +434,7 @@ const Pricing = () => {
               <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
               <p className="text-gray-500 text-sm mb-6 h-10">{tier.description}</p>
               <div className="text-4xl font-bold mb-8">{tier.price}</div>
-              
+
               <ul className="space-y-4 mb-8 flex-1">
                 {tier.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex items-start text-sm text-gray-700">
@@ -446,11 +444,10 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-xl font-bold transition-all ${
-                tier.recommended 
-                  ? 'bg-black text-white hover:bg-gray-800' 
+              <button className={`w-full py-4 rounded-xl font-bold transition-all ${tier.recommended
+                  ? 'bg-black text-white hover:bg-gray-800'
                   : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
-              }`}>
+                }`}>
                 立即购买
               </button>
             </div>
@@ -458,17 +455,17 @@ const Pricing = () => {
         </div>
 
         <div className="mt-20 p-8 bg-gradient-to-br from-gray-900 to-black rounded-3xl text-white text-center shadow-2xl relative overflow-hidden">
-           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-           <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4">🎁 前100位早鸟福利</h3>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                前100位购买用户可获得：30分钟 1对1 答疑 + 加入实践者社群 + 优先体验新功能。
-              </p>
-              <div className="flex justify-center items-center gap-2 text-sm text-gray-400">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                优惠进行中
-              </div>
-           </div>
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-4">🎁 前100位早鸟福利</h3>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              前100位购买用户可获得：30分钟 1对1 答疑 + 加入实践者社群 + 优先体验新功能。
+            </p>
+            <div className="flex justify-center items-center gap-2 text-sm text-gray-400">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              优惠进行中
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -499,7 +496,7 @@ const FAQ = () => {
               </div>
               <AnimatePresence>
                 {openIndex === idx && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -534,7 +531,7 @@ const Footer = () => {
               {/* Social icons would go here */}
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-bold mb-6">联系方式</h4>
             <p className="text-gray-500 mb-2">微信: NeymarJaMo</p>
@@ -549,7 +546,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-20 pt-8 border-t border-gray-100 text-center text-gray-400 text-sm">
           © {new Date().getFullYear()} ThoughtsCounts. All rights reserved.
         </div>
@@ -568,42 +565,42 @@ export default function App() {
       <Features />
       <BentoGrid />
       <Comparison />
-      
+
       {/* Testimonials Section */}
       <section className="py-24 bg-white overflow-hidden">
-         <div className="max-w-7xl mx-auto px-6">
-           <h2 className="text-center text-3xl font-bold mb-16">用户反馈</h2>
-           <div className="flex flex-col md:flex-row gap-8">
-             {[
-               {name: "李明", role: "产品经理", content: "用了PARA之后，同时管理5个项目也不慌了。每天早上打开Projects文件夹，立即知道今天的重点。"},
-               {name: "小红", role: "自媒体创作者", content: "作为创作者，灵感和素材特别多。现在Resources文件夹成了我的宝库，每次创作都能快速找到灵感！"},
-               {name: "王芳", role: "程序员", content: "技术文档、项目代码、学习笔记，之前桌面全是文件夹。现在用PARA，整个数字空间焕然一新。"}
-             ].map((t, i) => (
-               <div key={i} className="flex-1 bg-gray-50 p-8 rounded-2xl">
-                 <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                   <Star size={16} fill="currentColor" />
-                   <Star size={16} fill="currentColor" />
-                   <Star size={16} fill="currentColor" />
-                   <Star size={16} fill="currentColor" />
-                   <Star size={16} fill="currentColor" />
-                 </div>
-                 <p className="text-gray-600 mb-6 italic">"{t.content}"</p>
-                 <div className="font-bold">{t.name}</div>
-                 <div className="text-sm text-gray-400">{t.role}</div>
-               </div>
-             ))}
-           </div>
-         </div>
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-center text-3xl font-bold mb-16">用户反馈</h2>
+          <div className="flex flex-col md:flex-row gap-8">
+            {[
+              { name: "李明", role: "产品经理", content: "用了PARA之后，同时管理5个项目也不慌了。每天早上打开Projects文件夹，立即知道今天的重点。" },
+              { name: "小红", role: "自媒体创作者", content: "作为创作者，灵感和素材特别多。现在Resources文件夹成了我的宝库，每次创作都能快速找到灵感！" },
+              { name: "王芳", role: "程序员", content: "技术文档、项目代码、学习笔记，之前桌面全是文件夹。现在用PARA，整个数字空间焕然一新。" }
+            ].map((t, i) => (
+              <div key={i} className="flex-1 bg-gray-50 p-8 rounded-2xl">
+                <div className="flex items-center gap-1 text-yellow-400 mb-4">
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                </div>
+                <p className="text-gray-600 mb-6 italic">"{t.content}"</p>
+                <div className="font-bold">{t.name}</div>
+                <div className="text-sm text-gray-400">{t.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <Pricing />
       <FAQ />
-      
+
       {/* CTA Bottom */}
       <section className="py-24 bg-gray-900 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">60秒后，<br/>拥有井井有条的数字世界。</h2>
-          <button 
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">60秒后，<br />拥有井井有条的数字世界。</h2>
+          <button
             onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-10 py-4 bg-white text-black rounded-full text-lg font-bold hover:bg-gray-200 transition-all transform hover:scale-105"
           >
