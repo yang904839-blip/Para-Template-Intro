@@ -174,9 +174,9 @@ const Hero = () => {
           <img
             src="https://picsum.photos/1200/600?grayscale&blur=2"
             alt="Dashboard Preview"
-            className="rounded-2xl shadow-2xl border border-gray-200 opacity-90"
+            className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-2xl border border-gray-200 opacity-90 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent h-1/3 bottom-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent h-1/3 bottom-0 pointer-events-none"></div>
         </motion.div>
       </div>
     </section>
@@ -276,7 +276,7 @@ const Comparison = () => {
               <span className="text-gray-500">拥抱瞬间触达。</span>
             </h2>
             <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-              这是我两年实战打磨的系统。它不只是一个文件夹结构，而是一套让你从「想做」变成「在做」，从「焦虑」变成「掌控」的行动引擎。
+              这是我五年实战打磨的系统。它不只是一个文件夹结构，而是一套让你从「想做」变成「在做」，从「焦虑」变成「掌控」的行动引擎。
             </p>
 
             <div className="space-y-8">
@@ -422,8 +422,8 @@ const Pricing = () => {
             <div
               key={idx}
               className={`relative p-8 rounded-3xl border flex flex-col ${tier.recommended
-                  ? 'border-blue-500 shadow-2xl scale-105 z-10 bg-white'
-                  : 'border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 transition-all'
+                ? 'border-blue-500 shadow-2xl scale-105 z-10 bg-white'
+                : 'border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 transition-all'
                 }`}
             >
               {tier.recommended && (
@@ -445,8 +445,8 @@ const Pricing = () => {
               </ul>
 
               <button className={`w-full py-4 rounded-xl font-bold transition-all ${tier.recommended
-                  ? 'bg-black text-white hover:bg-gray-800'
-                  : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
+                ? 'bg-black text-white hover:bg-gray-800'
+                : 'bg-white border border-gray-200 text-gray-900 hover:bg-gray-50'
                 }`}>
                 立即购买
               </button>
