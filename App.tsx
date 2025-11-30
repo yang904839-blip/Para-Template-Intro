@@ -127,7 +127,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-20 overflow-hidden bg-gray-50">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
@@ -174,9 +174,8 @@ const Hero = () => {
           <img
             src="https://picsum.photos/1200/600?grayscale&blur=2"
             alt="Dashboard Preview"
-            className="w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-2xl border border-gray-200 opacity-90 object-cover"
+            className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent h-1/3 bottom-0 pointer-events-none"></div>
         </motion.div>
       </div>
     </section>
